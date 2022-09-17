@@ -47,9 +47,13 @@ function renderGame() {
     } else if (sum === 21) {
         message = "Wohoo!, You have got Blackjack"
         hasBlackJack = true
+        player.chips = player.chips + 5
+        playerEl.textContent = player.name + ": $" + player.chips
     } else {
         message = "You are out of the game"
         isAlive = false
+        player.chips = player.chips - 5
+        playerEl.textContent = player.name + ": $" + player.chips
     }
     messageEl.textContent = message
 }
@@ -61,5 +65,12 @@ function newCard() {
         cards.push(card)
         renderGame()
     }
+}
 
+function playAgain() {
+        cards = []
+        cardsEl.textContent = "Cards : "
+        sum = 0
+        sumEl.textContent = "Sum : "
+        startGame()
 }

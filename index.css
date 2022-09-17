@@ -33,3 +33,8 @@ button {
     font-size: 20px;
     margin-bottom: 4px;
 }
+
+#play-again-btn {
+    color: black;
+    font-size: 20px;
+}
